@@ -29,7 +29,7 @@ namespace Session01
             for (int i = 0; i < a.Length; i++)
             {
                 animal.getValues(a[i], b[i]);
-                Console.WriteLine(animal.nume + " makes " + animal.sunet);
+                Console.WriteLine("The " + animal.nume + " makes " + animal.sunet);
             }
         }
     }
