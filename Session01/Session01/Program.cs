@@ -6,31 +6,50 @@ using System.Threading.Tasks;
 
 namespace Session01
 {
-    public struct Animal
+    class Animal
     {
-        public String nume;
-        public String sunet;
+        public String name;
+        public String sound;
 
-
-        public void getValues(string n, string s)
+        public void getSounds()
         {
-            nume = n;
-            sunet = s;
+            String[] Sounds = { "ham-ham", "miau-miau", "oac-oac", "vrum-vrum" };
+            for (int i = 0; i < Sounds.Length; i++)
+            {
+                if (Sounds[i].Equals(sound))
+                    Console.WriteLine(name + " makes " + Sounds[i]);
+            }
         }
     }
+
+    class Dog : Animal
+    {
+
+        public Dog()
+        {
+            name = "Dog";
+            sound = "ham-ham";
+        }
+    }
+
+    class Cat : Animal
+    {
+        public Cat()
+        {
+            name = "Cat";
+            sound = "miau-miau";
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Animal animal = new Animal();
-            String[] a = { "dog", " cat", " frog" };
-            String[] b = { "ham-ham", "miau-miau", "oac-oac" };
-
-            for (int i = 0; i < a.Length; i++)
-            {
-                animal.getValues(a[i], b[i]);
-                Console.WriteLine(animal.nume + " makes " + animal.sunet);
-            }
+            Dog dog = new Dog();
+            Cat cat = new Cat();
+          
+            cat.getSounds();    
+            dog.getSounds();     
         }
     }
 }
